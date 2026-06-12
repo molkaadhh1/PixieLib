@@ -48,7 +48,7 @@ PixieLib is a feature-rich, native Android application designed for digital book
 ### Setup Instructions
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/MyDashboard2.git
+   git clone https://github.com/molkaadhh1/PixieLib.git
    cd MyDashboard2
    ```
 
