@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "983124721353",
+    "project_id": "pixielib-59c87",
+    "storage_bucket": "pixielib-59c87.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983124721353:android:a994b978fd7929bc6c9718",
+        "android_client_info": {
+          "package_name": "com.app.mydashboard"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAWWF92ylXVd9FcGb5rEQlDwf9juyfeT0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983124721353:android:44a05f10d70ca34a6c9718",
+        "android_client_info": {
+          "package_name": "com.app.otherapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAWWF92ylXVd9FcGb5rEQlDwf9juyfeT0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

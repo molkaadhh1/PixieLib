@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="@color/bg_card">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <!-- Book Cover Image with rounded borders inside card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="125dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/bg_light">
+
+            <ImageView
+                android:id="@+id/book_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="Book Cover" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Book Name, Author, Category and Buttons container -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <!-- Category Badge -->
+            <TextView
+                android:id="@+id/book_category_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Programming"
+                android:textColor="@color/primary"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:background="#156C5CE7"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:layout_marginBottom="6dp" />
+
+            <!-- Book Name -->
+            <TextView
+                android:id="@+id/book_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Book Name"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="2dp"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+
+            <!-- Book Author -->
+            <TextView
+                android:id="@+id/book_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Book Author"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Reservation Status Badge -->
+            <LinearLayout
+                android:id="@+id/reservation_status_container"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/reservation_status_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pending"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="11sp"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="3dp"
+                    android:background="@drawable/chip_background_selected"
+                    android:layout_marginEnd="6dp"/>
+
+                <TextView
+                    android:id="@+id/reservation_date_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date: -"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="11sp"/>
+            </LinearLayout>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <!-- Primary action: Reserve/Download -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/reserve_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Reserve"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:background="@drawable/button_gradient"
+                    android:paddingHorizontal="12dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <!-- Secondary action: Read Online -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/read_online_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Read Online"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:background="@drawable/chip_background_unselected"
+                    android:paddingHorizontal="12dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <!-- Cancel Reservation Button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cancel_reservation_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Cancel"
+                    android:textColor="@color/accent"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:background="@drawable/chip_background_unselected"
+                    android:paddingHorizontal="12dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

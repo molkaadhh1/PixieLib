@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light">
+
+    <!-- Top Toolbar Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/reader_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/bg_card">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:paddingHorizontal="16dp">
+
+            <!-- Back/Close Button -->
+            <ImageView
+                android:id="@+id/btn_close_reader"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                app:tint="@color/text_primary"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:padding="4dp"
+                android:contentDescription="Close Reader" />
+
+            <!-- Book Title & Page Count -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/btn_close_reader"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp">
+
+                <TextView
+                    android:id="@+id/reader_book_title"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:text="Book Title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:singleLine="true"
+                    android:ellipsize="end"/>
+
+                <TextView
+                    android:id="@+id/reader_page_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Page 1 of 1"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <!-- External Google Drive icon link -->
+            <ImageView
+                android:id="@+id/btn_drive_backup"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:src="@android:drawable/ic_menu_share"
+                app:tint="@color/primary"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:padding="6dp"
+                android:contentDescription="Open in Google Drive" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Center Content - PDF Page Frame -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/pdf_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/reader_toolbar"
+        android:layout_above="@+id/reader_controls"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="@color/bg_card">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <!-- ImageView displaying rendered PDF pages -->
+            <ImageView
+                android:id="@+id/pdf_page_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:padding="8dp"
+                android:contentDescription="PDF Page" />
+                
+            <!-- Loading indicator -->
+            <ProgressBar
+                android:id="@+id/pdf_loading_bar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Bottom Page Controls Panel -->
+    <LinearLayout
+        android:id="@+id/reader_controls"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bg_card"
+        android:elevation="8dp"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Previous Page Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_prev_page"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Prev Page"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:background="@drawable/button_gradient"
+                android:paddingHorizontal="16dp"
+                android:layout_alignParentStart="true" />
+
+            <!-- Next Page Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_next_page"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Next Page"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:background="@drawable/button_gradient"
+                android:paddingHorizontal="16dp"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+        <!-- External Backup Text Link -->
+        <TextView
+            android:id="@+id/text_open_google_drive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trouble reading? Open in Google Drive Viewer"
+            android:textSize="12sp"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
